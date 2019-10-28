@@ -1,0 +1,35 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="font.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="topnav.css">
+  <link rel="stylesheet" type="text/css" href="responsive.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body class="container">
+<div class="page-container">
+	<div id="topnav">
+		<a class="active" id="name" href="#home"><div id="inname">WordCounterSpace.com</div></a>
+	</div>
+	<script type="text/javascript" src="counter.js"></script>
+	<div id="sumcont"><p id="summary">0 WORDS 0 CHARACTERS</p></div>
+	<textarea id="text" onkeyup="count()" placeholder="Place your text here..."></textarea>
+	<div id=rescont>
+	<b id="dets">Details</b>
+	<div id="atr">
+		<p class="char">Characters</p>
+		<!--<p class="charstrict">Characters</p>-->
+		<p class="space">Spaces</p>
+		<p class="word">Words</p>
+		<p class="par">Paragraphs</p>
+	</div>
+	<div id="results">
+		<p class="char" id="char">0</p>
+		<!--<p class="charstrict" id="charonly">0</p>-->
+		<p class="space" id="space">0</p>
+		<p class="word" id="word">0</p>
+		<p class="par" id="par">0</p>
+	</div>
+	</div>
+</div>
+</body>

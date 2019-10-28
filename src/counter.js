@@ -1,19 +1,26 @@
-module.exports = function (text) {
-	if(!(typeof text === 'string')) {
-		const error = {}
+function display(count) {
+	document.getElementById('char').innerHTML = count.allcharacters || 0
+	//document.getElementById('charonly').innerHTML = count.characters || 0
+	document.getElementById('space').innerHTML = count.spaces || 0
+	document.getElementById('word').innerHTML = count.words || 0
+	document.getElementById('par').innerHTML = count.paragraphs || 0
+	const s = `${count.words || 0} WORDS ${count.allcharacters || 0} CHARACTERS`
+	document.getElementById('summary').innerHTML = s
+}
 
-		error.msg = 'Invalid argument: counter expects a string'
-		error.arg = text
-
-		return (error)
-	}
+function count () {
+	let text = document.getElementById("text").value;
 
 	const result = {}
-
 	result.spaces = 0
 	result.characters = 0
+	result.allcharacters = 0
 	result.words = 0
 	result.paragraphs = 0
+
+	if(!(typeof text === 'string')) {
+		display(result)
+	}
 
 	let i
 	let c
@@ -27,20 +34,22 @@ module.exports = function (text) {
 		++result.spaces
 
 	for(i = 1; i < text.length; ++i) {
+		++result.allcharacters
 		c = text.charAt(i)
 		if(c === ' ' || c === '\t' || c === '\n') {
 			const prev = text.charAt(i-1)
-			if(c === ' ') {
+			if(c === ' ' || c === '\t')
 				++result.spaces
-				if(!(prev === ' ' || prev === '\t' || prev ==='\n'))
-					++result.words
-			} else if(c === '\n') {
+			else if(c === '\n') {
 				if(!(prev === '\n'))
 					++result.paragraphs
 			}
+			if(!(prev === ' ' || prev === '\t' || prev ==='\n'))
+					++result.words
 
 		} else
 			++result.characters
 	}
-	return (result)
+
+	display(result)
 }
