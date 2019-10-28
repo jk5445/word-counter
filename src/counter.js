@@ -1,11 +1,13 @@
 function display(count) {
-	document.getElementById('char').innerHTML = count.allcharacters || 0
+	const s = `${count.words || 0} WORDS ${count.allcharacters || 0} CHARACTERS`
+
+	document.getElementById('summary').innerHTML = s
+
 	//document.getElementById('charonly').innerHTML = count.characters || 0
+	document.getElementById('char').innerHTML = count.allcharacters || 0
 	document.getElementById('space').innerHTML = count.spaces || 0
 	document.getElementById('word').innerHTML = count.words || 0
 	document.getElementById('par').innerHTML = count.paragraphs || 0
-	const s = `${count.words || 0} WORDS ${count.allcharacters || 0} CHARACTERS`
-	document.getElementById('summary').innerHTML = s
 }
 
 function count () {
