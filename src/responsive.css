@@ -9,7 +9,11 @@
 	#sumcont, #text, #rescont {
 		grid-column: 2;
 	}
-	
+
+	#text {
+		grid-row: 3;
+	}
+
 	#rescont {
 		grid-row: 4;
 	}
