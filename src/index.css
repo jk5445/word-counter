@@ -7,6 +7,7 @@ body {
     padding: 0;
 	background-color: whitesmoke;
 }
+
 .page-container {
 	display: grid;
 	grid-template-columns: 8% 50% 17% 2% 1fr 1fr;
@@ -19,20 +20,24 @@ body {
 	border-width: 1px;
 	box-shadow: 0 0 25px silver;
 }
+
 #sumcont, #text, #rescont {
 	border-radius: 8px;
 	border-style: solid;
 	border-color: silver;
 }
+
 #sumcont {
 	position: relative;
 	grid-column: 2;
 	grid-row: 2;
 }
+
 #summary {
 	position: relative;
 	left: 2%;
 }
+
 #text {
 	grid-column: 2;
 	grid-row: 3;
@@ -44,16 +49,19 @@ body {
 	grid-row: 3;
 	display: grid;
 }
+
 #atr {
 	grid-column: 1;
 	grid-row: 3;
 	position: relative;
 	left: 10%;
 }
+
 #results {
 	grid-column: 4;
 	grid-row: 3;
 }
+
 #dets {
 	position: relative;
 	left: 10%;
